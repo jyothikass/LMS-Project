@@ -12,10 +12,5 @@ public interface CoursesService {
 
     CoursesEntity save(CoursesEntity course);
 
-    default CourcesDto deleteById(int id) {
-        return null;
-
-    }
-
-    Collection<?> getCoursesByname(String courseNam);
+    CoursesEntity findByCourseName(String courseName);
 }

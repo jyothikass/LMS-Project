@@ -13,17 +13,19 @@ import org.hibernate.sql.ast.tree.update.Assignment;
 @Table(name = "submission")
 public class SubmissionEntity {
     @Id
-    private int subId;
-
-    private String grade;
-
-    private String feedback;
+    @GeneratedValue(generator = "x")
+    @SequenceGenerator(name = "x",sequenceName = "x",initialValue = 11,allocationSize = 1)
+    private int id;
 
     @ManyToOne
-    @JoinColumn(name = "studentId")
+    @JoinColumn(name = "studentName")
     private User user;
 
     @ManyToOne
     @JoinColumn(name = "assignId")
     private AssignmentEntity assignment;
+
+    private int grade;
+
+    private String feedback;
 }

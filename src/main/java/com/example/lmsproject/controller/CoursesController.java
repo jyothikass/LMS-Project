@@ -31,15 +31,21 @@ public class CoursesController {
     public String test() {
         return "in user controller";
     }
+    @GetMapping("/findByCourseName/{courseName}")
+    public CoursesEntity findByCourseName(@PathVariable String courseName){
+        CoursesEntity course=coursesService.findByCourseName(courseName);
+        return course;
+    }
 
-        @GetMapping("/deleteById/{id}")
-        public CourcesDto onDeleteById(@PathVariable int id){
-            CourcesDto courcesDto = this.coursesService.deleteById(id);
-            return courcesDto;
-        }
-          @GetMapping("/getUserByname/{courseNam}")
-        public List<CourcesDto> getCoursesByname(@RequestParam String courseNam){
-        return (List<CourcesDto>) coursesService.getCoursesByname(courseNam);
-        }
+//        @GetMapping("/deleteById/{id}")
+//        public CourcesDto onDeleteById(@PathVariable int id){
+//            CourcesDto courcesDto = this.coursesService.deleteById(id);
+//            return courcesDto;
+//        //        }
+
+
+
+
 }
+
 

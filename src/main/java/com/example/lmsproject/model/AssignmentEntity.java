@@ -16,11 +16,12 @@ public class AssignmentEntity {
     @Id
     private  int assignId;
 
+    @ManyToOne
+    @JoinColumn(name = "courseId")
+    private CoursesEntity course;
+
     private String assignName;
 
     private LocalDate dueDate;
 
-    @ManyToOne
-    @JoinColumn(name = "courseId")
-    private CoursesEntity course;
 }

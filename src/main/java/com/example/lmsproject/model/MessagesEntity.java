@@ -14,6 +14,8 @@ import java.sql.Timestamp;
 @Table(name = "message")
 public class MessagesEntity {
     @Id
+    @GeneratedValue(generator = "x")
+    @SequenceGenerator(name = "x",sequenceName = "x",initialValue = 1001,allocationSize = 1)
     private int msgId;
 
     @ManyToOne

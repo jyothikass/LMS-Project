@@ -1,14 +1,11 @@
 package com.example.lmsproject.service;
 
-import com.example.lmsproject.dto.CourcesDto;
-import com.example.lmsproject.dto.UserDto;
 import com.example.lmsproject.model.CoursesEntity;
-import com.example.lmsproject.model.User;
 import com.example.lmsproject.repository.CoursesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -27,6 +24,13 @@ public class CoursesServiceImpl implements CoursesService {
         return c;
     }
 
+    @Override
+    public CoursesEntity findByCourseName(String courseName) {
+        CoursesEntity entity= coursesRepository.findByCourseName(courseName);
+        return entity;
+    }
+
+
 //    @Override
 //    public CourcesDto deleteById(int id) {
 //        CoursesEntity entity = this.coursesRepository.deleteById(id);
@@ -39,10 +43,6 @@ public class CoursesServiceImpl implements CoursesService {
 //        return dto;
 //    }
 
-    @Override
-    public Collection<?> getCoursesByname(String courseNam) {
-        this.getCoursesByname(courseNam);
-        return null;
     }
-}
+
 
