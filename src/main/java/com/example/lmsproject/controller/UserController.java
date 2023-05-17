@@ -21,9 +21,9 @@ public class UserController {
     }
 
     @PostMapping("/addUser")
-    public String saveUsers(@Validated @RequestBody User user){
+    public String saveUsers(@Validated @RequestBody  User user){
         this.userService.save(user);
-        return "Register";
+        return "Register.html";
     }
     @GetMapping("/findById/{id}")
     public UserDto onFindById(@PathVariable int id) {
